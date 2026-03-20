@@ -52,7 +52,7 @@ const Projects = () => {
 
             <div className="project-links">
               <a
-                href="https://github.com/balakumarn1025/portfolio.git"
+                href="https://github.com/balakumarn1025/Portfolio.git"
                 target="_blank"
                 rel="noreferrer"
               >
