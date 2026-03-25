@@ -58,28 +58,12 @@ const Projects = () => {
               >
                 GitHub
               </a>
-            </div>
-          </div>
-
-          {/* Project 3 */}
-          <div className="project-card">
-            <h3>Todo List Application</h3>
-            <p>
-              A simple React application to manage daily tasks with add,
-              edit, and delete functionality.
-            </p>
-
-            <p className="tech-stack">
-              <strong>Tech:</strong> React, JavaScript
-            </p>
-
-            <div className="project-links">
               <a
-                href="https://github.com/balakumarn1025/todo-app.git"
+                href="https://portfolio-mbdx.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
               >
-                GitHub
+                Live Demo
               </a>
             </div>
           </div>
