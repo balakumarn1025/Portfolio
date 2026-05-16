@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --navy: #1a1a2e;
+  --gold: #c9a84c;
+  --gold-light: #fff8e7;
+  --off-white: #f8f8f6;
+  --white: #ffffff;
+  --muted: #666666;
+  --border: #e8e8e8;
+}
+
+/* Hero */
+.edu-hero {
+  background: var(--off-white);
+  padding: 100px 24px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.edu-hero-inner { position: relative; z-index: 2; }
+.section-label {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px;
+}
+.edu-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px; font-weight: 900;
+  color: var(--navy); margin-bottom: 12px;
+}
+.gold-bar {
+  width: 40px; height: 3px;
+  background: var(--gold); border-radius: 2px;
+  margin: 0 auto 16px;
+}
+.edu-subtitle {
+  font-size: 15px; color: var(--muted);
+  max-width: 420px; margin: 0 auto; line-height: 1.7;
+}
+.edu-blob {
+  position: absolute; border-radius: 50%;
+  opacity: 0.07; pointer-events: none;
+}
+.b1 { width: 350px; height: 350px; background: var(--gold); top: -120px; right: -80px; }
+.b2 { width: 250px; height: 250px; background: var(--navy); bottom: -80px; left: -60px; }
+
+/* Body */
+.edu-body { padding: 60px 0 80px; background: var(--white); }
+
+.section-header { margin-bottom: 32px; }
+.edu-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 700;
+  color: var(--navy); margin-bottom: 10px;
+}
+.gold-bar-left {
+  width: 40px; height: 3px;
+  background: var(--gold); border-radius: 2px;
+}
+
+/* Timeline */
+.timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 32px; }
+
+.timeline-item { position: relative; padding-bottom: 32px; }
+
+.timeline-dot {
+  position: absolute;
+  left: -37px; top: 20px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--border);
+}
+
+.timeline-line {
+  position: absolute;
+  left: -31px; top: 34px;
+  width: 2px;
+  bottom: 0;
+  background: var(--border);
+}
+
+/* Edu Card */
+.edu-card {
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.edu-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold) !important;
+  box-shadow: 0 8px 28px rgba(201,168,76,0.12) !important;
+}
+
+.edu-card-top {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 12px;
+}
+
+.edu-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+
+.edu-year-badge {
+  font-size: 12px; font-weight: 500;
+  padding: 4px 12px; border-radius: 20px;
+  background: var(--gold-light); color: #854f0b;
+  border: 1px solid #ef9f27;
+}
+
+.edu-degree {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--navy); margin-bottom: 4px;
+}
+.edu-field {
+  font-size: 14px; color: var(--gold);
+  font-weight: 500; margin-bottom: 12px;
+}
+
+.edu-meta {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  margin-bottom: 14px;
+}
+.edu-inst, .edu-loc {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 13px; color: var(--muted);
+}
+
+.edu-grade {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 14px;
+}
+.grade-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.grade-value { font-size: 14px; font-weight: 500; color: var(--navy); }
+
+/* Cert Cards */
+.cert-card {
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.cert-card:hover {
+  border-color: var(--gold) !important;
+  transform: translateY(-3px);
+}
+.cert-icon { font-size: 26px; margin-bottom: 8px; }
+.cert-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+.cert-year { font-size: 12px; color: var(--muted); margin: 0; }
+
+/* Footer */
+.page-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.55);
+  text-align: center; padding: 24px; font-size: 13px;
+}
+.page-footer strong { color: #fff; }
+
+@media (max-width: 768px) {
+  .edu-title { font-size: 34px; }
+  .edu-hero { padding: 80px 16px 48px; }
+  .edu-body { padding: 40px 0 60px; }
+  .timeline { padding-left: 20px; }
+}

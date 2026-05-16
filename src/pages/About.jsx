@@ -1,65 +1,147 @@
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import { useNavigate } from "react-router-dom";
+import profile from "../assets/profile.png";
 import "./About.css";
 
+const highlights = [
+  { icon: "🎓", label: "Degree",     value: "M.Sc. Computer Science" },
+  { icon: "📍", label: "Location",   value: "Chennai, Tamil Nadu" },
+  { icon: "💼", label: "Status",     value: "Fresher · Open to work" },
+  { icon: "🌐", label: "Languages",  value: "Tamil, English" },
+];
+
 const About = () => {
+  const navigate = useNavigate();
+
   return (
-    <section className="about-section">
-      <div className="about-container">
-        <h1 className="about-title">ABOUT ME</h1>
+    <>
+      {/* Hero */}
+      <section className="about-hero">
+        <div className="about-hero-inner">
+          <p className="section-label">Who I am</p>
+          <h1 className="about-title">About Me</h1>
+          <div className="gold-bar"></div>
+          <p className="about-subtitle">
+            A passionate developer, lifelong learner, and team player.
+          </p>
+        </div>
+        <div className="about-blob b1"></div>
+        <div className="about-blob b2"></div>
+      </section>
 
-        {/* Professional Summary */}
-        <p className="about-summary">
-          I am a motivated and detail-oriented MERN Stack Developer with
-          hands-on experience in building full-stack web applications. I have
-          worked on real-world projects using React.js, Node.js, Express.js, and
-          MongoDB, and I enjoy turning ideas into functional and user-friendly
-          applications. As a fresher, I am eager to learn, grow, and contribute
-          to innovative development teams.
-        </p>
+      {/* Main */}
+      <section className="about-body">
+        <Container>
+          <Row className="g-5 align-items-center">
+            {/* Photo */}
+            <Col md={5} className="text-center">
+              <div className="about-photo-wrap">
+                <div className="about-photo-ring"></div>
+                <div className="about-photo-circle">
+                  <img src={profile} alt="Balakumar N" className="about-photo" />
+                </div>
+                <div className="about-avail-badge">
+                  <span className="green-dot"></span> Available for work
+                </div>
+              </div>
+            </Col>
 
-        {/* Career Objective */}
-        <h2 className="about-heading">Career Objective</h2>
-        <p className="about-text">
-          My goal is to begin my career as an entry-level MERN Stack Developer
-          in an organization where I can apply my technical knowledge,
-          strengthen my problem-solving skills, and continuously improve through
-          real-world project experience while adding value to the team.
-        </p>
+            {/* Text */}
+            <Col md={7}>
+              <p className="section-label">My story</p>
+              <h2 className="about-section-title">Hi, I'm Balakumar N</h2>
+              <div className="gold-bar-left"></div>
+              <p className="about-para">
+                I'm a motivated and detail-oriented <strong>MERN Stack Developer</strong> with
+                hands-on experience in building full-stack web applications. I'm proficient in
+                JavaScript, React.js, Node.js, Express.js, MongoDB, HTML, CSS, and RESTful
+                API development.
+              </p>
+              <p className="about-para">
+                I have a strong passion for building modern web applications and I'm eager to
+                contribute to innovative projects as an entry-level developer. I served as a
+                <strong> college vice-captain</strong>, which strengthened my leadership,
+                teamwork, and communication skills.
+              </p>
+              <p className="about-para">
+                When I'm not coding, I enjoy exploring new technologies, reading tech blogs,
+                and continuously leveling up my skillset.
+              </p>
 
-        {/* What I Do */}
-        <h2 className="about-heading">Key Responsibilities & Skills</h2>
-        <ul className="about-list">
-          <li>
-            Develop responsive and interactive user interfaces using React.js
-          </li>
-          <li>Create backend REST APIs using Node.js and Express.js</li>
-          <li>Design and manage databases using MongoDB</li>
-          <li>Integrate frontend and backend for seamless data flow</li>
-          <li>Debug and improve application performance</li>
-          <li>Collaborate with team members using version control (GitHub)</li>
-          <li>Follow clean coding practices and version control</li>
-        </ul>
+              <div className="about-btns">
+                <button className="btn-gold-solid" onClick={() => navigate("/contact")}>
+                  Hire Me
+                </button>
+                <button className="btn-navy-outline" onClick={() => navigate("/projects")}>
+                  My Projects
+                </button>
+              </div>
+            </Col>
+          </Row>
 
-        {/* Strengths */}
-        <h2 className="about-heading">My Strengths</h2>
-        <ul className="about-list">
-          <li>Clear and improving communication skills</li>
-          <li>Strong problem-solving and logical thinking</li>
-          <li>Quick learner with a positive and adaptive mindset</li>
-          <li>Good teamwork and collaboration abilities</li>
-          <li>Leadership experience as a college vice-captain</li>
-        </ul>
+          {/* Highlight cards */}
+          <Row className="g-3 mt-5">
+            {highlights.map((h) => (
+              <Col md={3} sm={6} key={h.label}>
+                <Card className="highlight-card h-100 text-center">
+                  <Card.Body className="p-3">
+                    <div className="highlight-icon">{h.icon}</div>
+                    <p className="highlight-label">{h.label}</p>
+                    <p className="highlight-value">{h.value}</p>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
 
-        {/* Learning & Growth */}
-        <h2 className="about-heading">Learning & Growth</h2>
-        <p className="about-text">
-          I strongly believe in continuous learning and skill development. I
-          regularly practice coding, build projects, and explore modern
-          development tools to improve my technical abilities. I am open to
-          feedback and always eager to enhance both my technical and
-          professional skills.
-        </p>
-      </div>
-    </section>
+          {/* Career Objective */}
+          <div className="objective-section">
+            <p className="section-label">My goal</p>
+            <h2 className="about-section-title">Career Objective</h2>
+            <div className="gold-bar-left"></div>
+            <Card className="objective-card mt-3">
+              <Card.Body className="p-4">
+                <span className="objective-quote">"</span>
+                <p className="objective-text">
+                  Seeking a challenging position as a MERN Stack Developer to utilize my skills
+                  in JavaScript, React.js, Node.js, and MongoDB to build innovative web
+                  applications. Eager to contribute to a dynamic team and grow as a developer
+                  while delivering high-quality solutions.
+                </p>
+              </Card.Body>
+            </Card>
+          </div>
+
+          {/* Strengths */}
+          <div className="strengths-section">
+            <p className="section-label">My edge</p>
+            <h2 className="about-section-title">Strengths</h2>
+            <div className="gold-bar-left"></div>
+            <div className="strengths-list mt-3">
+              {[
+                { icon: "🧠", text: "Strong problem-solving skills" },
+                { icon: "⚡", text: "Quick learner and adaptable" },
+                { icon: "💬", text: "Clear and improving communication skills" },
+                { icon: "📈", text: "Passion for continuous learning and growth" },
+                { icon: "🏆", text: "Leadership experience as a college vice-captain" },
+              ].map((s) => (
+                <div className="strength-row" key={s.text}>
+                  <span className="strength-icon">{s.icon}</span>
+                  <span className="strength-text">{s.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <footer className="page-footer">
+        <p>Designed & Built by <strong>Balakumar N</strong> · {new Date().getFullYear()}</p>
+      </footer>
+    </>
   );
 };
 

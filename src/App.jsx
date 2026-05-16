@@ -1,13 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import About from "./pages/About";
-import Footer from "./Components/Footer";
 import Education from "./pages/Education";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contact from "./Contact";
-import Download_resume from "./pages/Download_resume";
 import Home from "./pages/Home";
+import Resume from "./pages/Resume";
 
 function App() {
   // // using useNavigate to navigate to different pages
@@ -22,9 +21,8 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/download_resume" element={<Download_resume />} />
+        <Route path="/download_resume" element={<Resume />} />
       </Routes>
-      <Footer />
     </>
   );
 }
